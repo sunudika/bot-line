@@ -72,7 +72,7 @@ $app->post('/', function ($request, $response)
 			$splittedMessage = explode(" ",$userMessage);
 			$first = (int) $splittedMessage[0];
 			$second = (int) $splittedMessage[1];
-			$hasil = $first + $second;
+			$hasil = number_format(($first + $second), 0, ',', '.');
 			$message = "Hasilnya: $hasil";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
