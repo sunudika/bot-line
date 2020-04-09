@@ -60,7 +60,7 @@ $app->post('/', function ($request, $response)
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		}
-		if(strtolower($userMessage) == 'ini bot apa?')
+		if(strtolower($userMessage) == 'ini bot apa ya')
 		{
 			$message = "saya adalah bot yang didesain untuk melakukan penjumlahan sederhana, cukup ketikan '[angka1] [angka2]' pada chat selanjutnya dan anda akan melihat hasilnya";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
