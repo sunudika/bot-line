@@ -46,7 +46,7 @@ $app->post('/', function ($request, $response)
 	foreach ($data['events'] as $event)
 	{
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == 'halo')
+		if(strtolower($userMessage) == '/start')
 		{
 			$message = "Halo! selamat pagi! semoga harimu menyenangkan, apa ada yg bisa saya bantu?";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
@@ -60,7 +60,7 @@ $app->post('/', function ($request, $response)
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		}
-		if(strtolower($userMessage) == 'ini bot apa ya')
+		if(strtolower($userMessage) == '/help')
 		{
 			$message = "saya adalah bot yang didesain untuk melakukan penjumlahan sederhana, cukup ketikan '[angka1] [angka2]' pada chat selanjutnya dan anda akan melihat hasilnya";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
